@@ -1,0 +1,16 @@
+# Raspberry Pi 4 / Raspberry Pi OS (64-bit), CPU-only.
+# These pins force pip to use the PyTorch CPU wheel rather than PyPI's
+# CUDA-enabled Linux build (which pulls cuDNN and other NVIDIA packages).
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.7.1+cpu
+# Aarch64 CPython 3.13 has no 0.22.1+cpu torchvision wheel. This binary is
+# CPU-capable and its torch==2.7.1 dependency is satisfied by the CPU build above.
+torchvision==0.22.1
+
+ultralytics>=8.3,<9
+streamlit>=1.39,<2
+Pillow>=10.4,<12
+psutil>=6.0,<8
+numpy>=1.26,<3
+fpdf2
+ 
